@@ -8,10 +8,15 @@ Hi all, for Project Documentation, we can consider the following (and change/ada
 3) Methodology/Approach (tech stack/tools, ETL (incl data preparation), architecture diagram, database schema/ERD diagram, table structure, data validation)
 
 4) Challenges(Solutions/Workarounds)/Limitations
+   mmovie database is a huge amount of data (depending on period and user ratings)
+   download entire movie database requires few days (sometimes require recursive spam api calls to complete A-Z page of movies data)
+   free api is restrictive to 10,000 calls for example
+   workaround - movie dataset can be found and downloaded via kaggleapi
+   
 
-5) Findings/Analysis
+6) Findings/Analysis
 
-6) Next Steps/Conclusion
+7) Next Steps/Conclusion
  
 
 The groups can decide to put them as word document or put the related contents in Jupyter Notebook, alongside with the code. 
