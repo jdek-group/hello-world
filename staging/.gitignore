@@ -2,3 +2,4 @@
 *.csv
 *pycache*
 env/*
+*pycache*
