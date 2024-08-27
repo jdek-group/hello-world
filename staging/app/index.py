@@ -67,7 +67,7 @@ def index():
     #     {df_html}
     combined_html = f'''
     <html>
-    <head><title>Flask Plot Example</title></head>
+    <head><title>Flask Plot Viz</title></head>
     <body>
         {plot_html}
     </body>
