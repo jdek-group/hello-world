@@ -2,32 +2,24 @@ from flask import Flask, render_template, render_template_string
 import psycopg2
 import plotly.express as px
 import pandas as pd
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 
-app.config['DB_NAME'] = 'moviedb-test2'
-app.config['DB_USER'] = 'postgres'
-app.config['DB_PASSWORD'] = 'admin'
-app.config['DB_HOST'] = 'localhost'
-app.config['DB_PORT'] = '5432'
-
 def get_db_connection():
     conn = psycopg2.connect(
-        dbname=app.config['DB_NAME'],
-        user=app.config['DB_USER'],
-        password=app.config['DB_PASSWORD'],
-        host=app.config['DB_HOST'],
-        port=app.config['DB_PORT']
+        dbname=os.getenv("DBNAME"),
+        user=os.getenv("DBUSER"),
+        password=os.getenv("DBPASS"),
+        host=os.getenv("DBHOST"),
+        port="5432"
     )
     return conn
 
 @app.route('/')
 def index():
-    # Create a sample DataFrame
-    data = {'Name': ['Alice', 'Bob', 'Charlie'],
-            'Age': [25, 30, 35],
-            'City': ['New York', 'Los Angeles', 'Chicago']}
-    
 
     conn = get_db_connection()
     cur = conn.cursor()
