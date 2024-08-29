@@ -1,7 +1,7 @@
 import pandas as pd
 import sqlalchemy as db
 
-engine = db.create_engine('postgresql://postgres:admin@localhost:5432/moviedb-test2')
+engine = db.create_engine('postgresql://postgres:Adminadmin!@movies-stellarsteer-dev-01.postgres.database.azure.com/moviedb01')
 conn = engine.raw_connection()
 
 def load_to_db(file_uri: str) -> None:
